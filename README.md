@@ -9,9 +9,10 @@ This dashboard serves as a vault for your personal data, organizing your dreams,
 ## Image Gallery
 
 <div style="display: flex; justify-content: space-between;">
-    <img src="path_to_image/image1.png" alt="Image 1" width="200" />
-    <img src="path_to_image/image2.png" alt="Image 2" width="200" />
-    <img src="path_to_image/image3.png" alt="Image 3" width="200" />
+    <img src="figures/fig1.jpg" alt="Image 1" width="200" />
+    <img src="figures/fig2.jpg" alt="Image 1" width="200" />
+    <img src="figures/fig3.jpg" alt="Image 1" width="200" />
+    <img src="figures/fig4.jpg" alt="Image 1" width="200" />
 </div>
 
 *Figures: Sample Images of the Project.*
