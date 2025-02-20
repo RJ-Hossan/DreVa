@@ -8,14 +8,15 @@ This dashboard serves as a vault for your personal data, organizing your dreams,
 
 ## Image Gallery
 
-<div style="display: flex; justify-content: space-between;">
-    <img src="figures/fig1.jpg" alt="Image 1" width="200" />
-    <img src="figures/fig2.jpg" alt="Image 1" width="200" />
-    <img src="figures/fig3.jpg" alt="Image 1" width="200" />
-    <img src="figures/fig4.jpg" alt="Image 1" width="200" />
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+    <img src="figures/fig1.jpg" alt="Image 1" width="400" />
+    <img src="figures/fig2.jpg" alt="Image 2" width="400" />
+    <img src="figures/fig3.jpg" alt="Image 3" width="400" />
+    <img src="figures/fig4.jpg" alt="Image 4" width="400" />
 </div>
 
 *Figures: Sample Images of the Project.*
+
 
 ## Features
 
