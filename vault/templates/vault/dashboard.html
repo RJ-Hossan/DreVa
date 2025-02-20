@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'vault/css/style.css' %}">
+    <title>Dream Vault Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .section {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            margin-top: 0;
+        }
+
+        .item-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .item-list li {
+            padding: 10px;
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .item-list li a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        .btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-create {
+            background-color: #28a745;
+        }
+
+        .btn-create:hover {
+            background-color: #218838;
+        }
+
+        .intro-text {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome, {{ user.username }}</h1>
+    </header>
+
+    <div class="container">
+
+        <!-- Goals Section -->
+        <div class="section">
+            <h2>Your Goals</h2>
+            <p class="intro-text">Track your progress towards your personal and professional goals. This is the place where you can see how far you've come and what needs more attention.</p>
+            <ul class="item-list">
+                {% for goal in goals %}
+                    <li>{{ goal.title }} - Progress: {{ goal.progress }}%</li>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'add_goal' %}" class="btn btn-create">Add New Goal</a>
+        </div>
+
+        <!-- Dreams Section -->
+        <div class="section">
+            <h2>Your Dreams</h2>
+            <p class="intro-text">Record your dreams and their interpretations. Reflect on the meaning of your dreams and explore new insights as you track your subconscious thoughts.</p>
+            <ul class="item-list">
+                {% for dream in dreams %}
+                    <li>{{ dream.title }} - Date: {{ dream.date }} - Interpretation: {{ dream.interpretation }}</li>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'add_dream' %}" class="btn btn-create">Add New Dream</a>
+        </div>
+
+        <!-- Events Section -->
+        <div class="section">
+            <h2>Your Events</h2>
+            <p class="intro-text">Keep track of significant events in your life with the event capsule feature. Unlock special events and mark milestones as they happen.</p>
+            <ul class="item-list">
+                {% for event in events %}
+                    <li>{{ event.event_name }} - Date: {{ event.event_date }} - Unlocked: {{ event.unlocked }}</li>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'add_event' %}" class="btn btn-create">Create New Event Capsule</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
